@@ -3,6 +3,7 @@ package com.example.demo;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -15,7 +16,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ServletModelAttribu
 
 import javax.servlet.http.HttpServletRequest;
 
-
+@Component
 public class JsonAndFormArgumentResolver implements HandlerMethodArgumentResolver {
 
     //用来处理表单提交
@@ -25,8 +26,8 @@ public class JsonAndFormArgumentResolver implements HandlerMethodArgumentResolve
     RequestResponseBodyMethodProcessor requestResponseBodyMethodProcessor;
 
 
-
     public void setAttributeMethodArgumentResolver(ServletModelAttributeMethodProcessor servletModelAttributeMethodProcessor) {
+
         this.servletModelAttributeMethodProcessor = servletModelAttributeMethodProcessor;
     }
 

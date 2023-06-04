@@ -1,10 +1,7 @@
 package com.example.demo;
 
 import lombok.Data;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("test")
@@ -13,10 +10,13 @@ public class TestController {
     @Data
     public static class Person{
         String name;
+        Person son;
+        int[] nums;
     }
 
+
     @PostMapping("json")
-    public String json(Person person){
-        return person.name;
+    public Person json( Person person){
+        return person;
     }
 }
